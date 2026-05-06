@@ -18,7 +18,7 @@ const serviceOverview = [
 ];
 
 const testimonials = [
-  { name: "Sarah Chen", role: "CMO, TechVault", text: "AdScale transformed our digital presence. Our organic traffic grew 340% in just 6 months.", rating: 5 },
+  { name: "Sarah Chen", role: "CMO, TechVault", text: "MargCred transformed our digital presence. Our organic traffic grew 340% in just 6 months.", rating: 5 },
   { name: "Marcus Johnson", role: "Founder, GrowthLab", text: "The paid ads campaigns delivered 5x ROAS consistently. Best marketing investment we've made.", rating: 5 },
   { name: "Emily Rodriguez", role: "VP Marketing, CloudBase", text: "Their content strategy positioned us as thought leaders. Inbound leads tripled.", rating: 5 },
 ];
@@ -77,7 +77,7 @@ const Landing = () => (
     <section className="py-16">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {[["500+", "Clients Served"], ["340%", "Avg Traffic Growth"], ["$2M+", "Ad Spend Managed"], ["98%", "Client Retention"]].map(([stat, label]) => (
+          {[["500+", "Clients Served"], ["340%", "Avg Traffic Growth"], ["₹2Cr+", "Ad Spend Managed"], ["98%", "Client Retention"]].map(([stat, label]) => (
             <motion.div key={label} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
               <div className="text-3xl md:text-4xl font-display font-bold text-gradient">{stat}</div>
               <div className="text-sm text-muted-foreground mt-1">{label}</div>
@@ -117,7 +117,7 @@ const Landing = () => (
           <div className="absolute inset-0 bg-gradient-to-r from-violet-600/90 to-fuchsia-500/90" />
           <div className="relative z-10">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-primary-foreground mb-4">Ready to Accelerate Your Growth?</h2>
-            <p className="text-primary-foreground/80 mb-8 max-w-lg mx-auto">Join 500+ companies that have transformed their marketing with AdScale.</p>
+            <p className="text-primary-foreground/80 mb-8 max-w-lg mx-auto">Join 500+ companies that have transformed their marketing with MargCred.</p>
             <Button asChild size="lg" className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 rounded-xl text-base px-8">
               <Link to="/signup">Start Free Consultation <ArrowRight className="ml-2 w-4 h-4" /></Link>
             </Button>
@@ -128,14 +128,41 @@ const Landing = () => (
 
     {/* Footer */}
     <footer className="border-t py-12">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-        <div className="font-display font-bold text-lg text-gradient">AdScale</div>
-        <div className="flex gap-6 text-sm text-muted-foreground">
-          <Link to="/services" className="hover:text-primary transition-colors">Services</Link>
-          <Link to="/login" className="hover:text-primary transition-colors">Login</Link>
-          <Link to="/signup" className="hover:text-primary transition-colors">Sign Up</Link>
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <div className="font-display font-bold text-lg text-gradient mb-3">MargCred</div>
+            <p className="text-sm text-muted-foreground">Data-driven advertising services that deliver measurable growth for B2B companies.</p>
+          </div>
+          <div>
+            <h4 className="font-display font-semibold text-sm mb-3">Quick Links</h4>
+            <div className="flex flex-col gap-2 text-sm text-muted-foreground">
+              <Link to="/services" className="hover:text-primary transition-colors">Services</Link>
+              <Link to="/login" className="hover:text-primary transition-colors">Login</Link>
+              <Link to="/signup" className="hover:text-primary transition-colors">Sign Up</Link>
+            </div>
+          </div>
+          <div>
+            <h4 className="font-display font-semibold text-sm mb-3">Legal</h4>
+            <div className="flex flex-col gap-2 text-sm text-muted-foreground">
+              <Link to="/terms" className="hover:text-primary transition-colors">Terms & Conditions</Link>
+              <Link to="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+              <Link to="/refund" className="hover:text-primary transition-colors">Refund Policy</Link>
+            </div>
+          </div>
+          <div>
+            <h4 className="font-display font-semibold text-sm mb-3">Contact</h4>
+            <p className="text-sm text-muted-foreground">+91 7965258132</p>
+          </div>
         </div>
-        <p className="text-xs text-muted-foreground">© 2026 AdScale. All rights reserved.</p>
+        <div className="border-t pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-muted-foreground">© 2026 MargCred. All rights reserved.</p>
+          <div className="flex gap-4 text-xs text-muted-foreground">
+            <Link to="/terms" className="hover:text-primary transition-colors">Terms</Link>
+            <Link to="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
+            <Link to="/refund" className="hover:text-primary transition-colors">Refund</Link>
+          </div>
+        </div>
       </div>
     </footer>
   </div>

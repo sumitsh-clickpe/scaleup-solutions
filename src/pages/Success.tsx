@@ -5,9 +5,11 @@ import { CheckCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useCart } from "@/context/CartContext";
 
+const fmt = (n: number) => `₹${n.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
 const Success = () => {
   const { items, total, clearCart } = useCart();
-  const orderId = useMemo(() => `ADS-${Date.now().toString(36).toUpperCase()}`, []);
+  const orderId = useMemo(() => `MC-${Date.now().toString(36).toUpperCase()}`, []);
   const purchasedItems = useMemo(() => [...items], []);
 
   useEffect(() => {
@@ -32,13 +34,13 @@ const Success = () => {
             {purchasedItems.map(item => (
               <div key={item.service.id} className="flex justify-between text-sm">
                 <span>{item.service.title} × {item.quantity}</span>
-                <span>${(item.service.price * item.quantity).toFixed(2)}</span>
+                <span>{fmt(item.service.price * item.quantity)}</span>
               </div>
             ))}
           </div>
           <div className="border-t mt-4 pt-4 flex justify-between font-display font-bold text-lg">
             <span>Total Paid</span>
-            <span className="text-gradient">${total.toFixed(2)}</span>
+            <span className="text-gradient">{fmt(total)}</span>
           </div>
         </div>
 

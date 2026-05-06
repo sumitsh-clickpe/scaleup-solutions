@@ -63,7 +63,7 @@ const Services = () => {
         {filtered.map(s => (
           <motion.div key={s.id} variants={fadeUp} className="bg-card rounded-2xl border border-border/50 shadow-card hover:shadow-glow transition-all duration-300 flex flex-col overflow-hidden group">
             <div className="gradient-hero p-6 flex items-center justify-center">
-              <span className="text-3xl font-display font-bold text-primary-foreground">${s.price}</span>
+              <span className="text-3xl font-display font-bold text-primary-foreground">₹{s.price.toLocaleString("en-IN")}</span>
               <span className="text-primary-foreground/70 text-sm ml-1">/mo</span>
             </div>
             <div className="p-6 flex flex-col flex-1">

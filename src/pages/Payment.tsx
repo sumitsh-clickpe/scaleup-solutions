@@ -7,6 +7,8 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useCart } from "@/context/CartContext";
 
+const fmt = (n: number) => `₹${n.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
 const Payment = () => {
   const navigate = useNavigate();
   const { total, items } = useCart();
@@ -33,7 +35,7 @@ const Payment = () => {
             <span className="text-sm text-muted-foreground">Secure Payment</span>
           </div>
           <h1 className="text-2xl font-display font-bold mb-1">Payment</h1>
-          <p className="text-muted-foreground text-sm mb-6">Total: <span className="text-gradient font-display font-bold text-lg">${total.toFixed(2)}</span></p>
+          <p className="text-muted-foreground text-sm mb-6">Total: <span className="text-gradient font-display font-bold text-lg">{fmt(total)}</span></p>
 
           {/* Method Toggle */}
           <div className="flex gap-2 mb-6">
@@ -69,7 +71,7 @@ const Payment = () => {
               {processing ? (
                 <span className="flex items-center gap-2"><Loader2 className="w-5 h-5 animate-spin" />Processing Payment...</span>
               ) : (
-                `Pay $${total.toFixed(2)}`
+                `Pay ${fmt(total)}`
               )}
             </Button>
           </form>
