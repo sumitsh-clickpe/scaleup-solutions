@@ -7,6 +7,8 @@ import { Label } from "@/components/ui/label";
 import { useCart } from "@/context/CartContext";
 import { ArrowRight } from "lucide-react";
 
+const fmt = (n: number) => `₹${n.toLocaleString("en-IN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
 const Checkout = () => {
   const navigate = useNavigate();
   const { items, subtotal, gst, total } = useCart();
@@ -61,14 +63,14 @@ const Checkout = () => {
               {items.map(item => (
                 <div key={item.service.id} className="flex justify-between text-sm">
                   <span className="text-muted-foreground">{item.service.title} × {item.quantity}</span>
-                  <span>${(item.service.price * item.quantity).toFixed(2)}</span>
+                  <span>{fmt(item.service.price * item.quantity)}</span>
                 </div>
               ))}
             </div>
             <div className="border-t pt-3 space-y-2 text-sm">
-              <div className="flex justify-between"><span className="text-muted-foreground">Subtotal</span><span>${subtotal.toFixed(2)}</span></div>
-              <div className="flex justify-between"><span className="text-muted-foreground">GST (18%)</span><span>${gst.toFixed(2)}</span></div>
-              <div className="border-t pt-3 flex justify-between font-display font-bold text-lg"><span>Total</span><span className="text-gradient">${total.toFixed(2)}</span></div>
+              <div className="flex justify-between"><span className="text-muted-foreground">Subtotal</span><span>{fmt(subtotal)}</span></div>
+              <div className="flex justify-between"><span className="text-muted-foreground">GST (18%)</span><span>{fmt(gst)}</span></div>
+              <div className="border-t pt-3 flex justify-between font-display font-bold text-lg"><span>Total</span><span className="text-gradient">{fmt(total)}</span></div>
             </div>
           </div>
         </div>

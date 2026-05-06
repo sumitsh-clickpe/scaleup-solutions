@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 glass border-b">
       <div className="container mx-auto flex items-center justify-between h-16 px-4">
-        <Link to="/" className="font-display font-bold text-xl text-gradient">AdScale</Link>
+        <Link to="/" className="font-display font-bold text-xl text-gradient">MargCred</Link>
         <div className="hidden md:flex items-center gap-8">
           {links.map(l => (
             <Link key={l.to} to={l.to} className={`text-sm font-medium transition-colors hover:text-primary ${location.pathname === l.to ? "text-primary" : "text-muted-foreground"}`}>
