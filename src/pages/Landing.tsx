@@ -30,9 +30,7 @@ const Landing = () => (
   <div className="min-h-screen">
     {/* Hero */}
     <section className="relative overflow-hidden py-24 md:py-32">
-      <div className="absolute inset-0 gradient-hero opacity-10 animate-glow-pulse" />
-      <div className="absolute top-20 right-10 w-72 h-72 rounded-full bg-primary/20 blur-3xl animate-float" />
-      <div className="absolute bottom-10 left-10 w-96 h-96 rounded-full bg-accent/30 blur-3xl animate-float" style={{ animationDelay: "3s" }} />
+      <div className="absolute inset-0 gradient-hero opacity-5" />
       <div className="container mx-auto px-4 relative z-10">
         <motion.div initial="hidden" animate="visible" variants={stagger} className="max-w-3xl mx-auto text-center">
           <motion.h1 variants={fadeUp} className="text-4xl md:text-6xl font-display font-bold leading-tight mb-6">
